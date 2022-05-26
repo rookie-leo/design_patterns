@@ -1,19 +1,28 @@
 package loja.br.com.loja;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.util.Scanner;
 
-import loja.br.com.loja.orcamento.Orcamento;
-import loja.br.com.loja.pedido.Pedido;
+import loja.br.com.loja.pedido.GeraPedido;
 
 public class TestePedido {
 
 	public static void main(String[] args) {
-		Orcamento orcamento = new Orcamento(new BigDecimal("600"), 4);
-		String cliente = "Ana Silva";
-		LocalDateTime data = LocalDateTime.now();
 		
-		Pedido pedido = new Pedido(cliente, data, orcamento);
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Digite o nome do cliente: ");
+		String cliente = sc.nextLine();
+		System.out.println("Digite o valor do orçamento realizado: ");
+		BigDecimal valorDoOrcamento = sc.nextBigDecimal();
+		System.out.println("Digite a quantidade de itens: ");
+		int qtdeItens = sc.nextInt();
+		
+		sc.close();
+		
+		GeraPedido gerador = new GeraPedido(cliente, valorDoOrcamento, qtdeItens);
+		gerador.executa();
+		
 	}
 	
 }
