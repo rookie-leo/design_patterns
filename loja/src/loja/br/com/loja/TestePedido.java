@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.Scanner;
 
 import loja.br.com.loja.pedido.GeraPedido;
+import loja.br.com.loja.pedido.PedidoCommandHandler;
 
 public class TestePedido {
 
@@ -21,7 +22,8 @@ public class TestePedido {
 		sc.close();
 		
 		GeraPedido gerador = new GeraPedido(cliente, valorDoOrcamento, qtdeItens);
-		gerador.executa();
+		PedidoCommandHandler command = new PedidoCommandHandler();
+		command.execute(gerador);
 		
 	}
 	
