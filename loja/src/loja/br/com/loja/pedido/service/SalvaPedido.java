@@ -1,0 +1,11 @@
+package loja.br.com.loja.pedido.service;
+
+import loja.br.com.loja.pedido.Pedido;
+
+public class SalvaPedido {
+
+	public void executar(Pedido pedido) {
+		System.out.println("Salvando dados do pedido no banco de dados");
+	}
+	
+}

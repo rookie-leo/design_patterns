@@ -3,6 +3,8 @@ package loja.br.com.loja.pedido;
 import java.time.LocalDateTime;
 
 import loja.br.com.loja.orcamento.Orcamento;
+import loja.br.com.loja.pedido.service.EnviaEmailPedido;
+import loja.br.com.loja.pedido.service.SalvaPedido;
 
 public class PedidoCommandHandler {
 
@@ -10,8 +12,11 @@ public class PedidoCommandHandler {
 		Orcamento orcamento = new Orcamento(dados.getValorDoOrcamento(), dados.getQtdItens());
 		Pedido pedido = new Pedido(dados.getCliente(), LocalDateTime.now(), orcamento);
 		
-		System.out.println("Pedido realizado com sucesso");//Salvando no banco de dados
-		System.out.println("Enviando e-mail com dados da compra");//Enviando e-mail para o cliente
+		EnviaEmailPedido email = new EnviaEmailPedido();
+		SalvaPedido salva = new SalvaPedido();
+		
+		email.executar(pedido);
+		salva.executar(pedido);
 	}
 	
 }
