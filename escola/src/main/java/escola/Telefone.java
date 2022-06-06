@@ -16,5 +16,13 @@ public class Telefone {
 		this.numero = numero;
 	}
 	
+	public String getDdd() {
+		return this.ddd;
+	}
+	
+	public String getNumero() {
+		return numero;
+	}
+	
 }
  

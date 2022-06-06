@@ -1,5 +1,6 @@
 package escola;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
@@ -31,6 +32,16 @@ class TelefoneTest {
 		
 		assertThrows(IllegalArgumentException.class,
 				() -> new Telefone("(11)", "123456789654"));
+	}
+	
+	@Test
+	void devePermitirCriarTelefoneComDddETelefoneCorretos() {
+		String ddd = "11";
+		String numero = "1234-5678";
+		Telefone telefone = new Telefone(ddd, numero);
+		
+		assertEquals(ddd, telefone.getDdd());
+		assertEquals(numero,  telefone.getNumero());
 	}
 
 }
