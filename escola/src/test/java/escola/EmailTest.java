@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 class EmailTest {
 
 	@Test
-	void naoDeveCriaraEmailsComEnderecoInvalidos() {
+	void naoDeveCriarEmailsComEnderecoInvalidos() {
 		assertThrows(IllegalArgumentException.class, 
 				() -> new Email(null));
 		
