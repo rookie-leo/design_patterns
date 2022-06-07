@@ -1,4 +1,7 @@
-package escola;
+package br.com.escola;
+
+import br.com.escola.aluno.Aluno;
+import br.com.escola.aluno.FabricaDeAluno;
 
 public class Main {
 
