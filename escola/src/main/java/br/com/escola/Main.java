@@ -1,7 +1,7 @@
 package br.com.escola;
 
-import br.com.escola.aluno.Aluno;
-import br.com.escola.aluno.FabricaDeAluno;
+import br.com.escola.dominio.aluno.Aluno;
+import br.com.escola.dominio.aluno.FabricaDeAluno;
 
 public class Main {
 
