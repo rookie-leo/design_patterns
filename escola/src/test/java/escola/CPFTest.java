@@ -1,5 +1,6 @@
 package escola;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
@@ -22,7 +23,11 @@ class CPFTest {
 	
 	@Test
 	void deveCadastrarCPFValido() {
-		//TODO implementar logica para testar COF valido
+		String numero = "123.456.789-98";
+		CPF cpf = new CPF(numero);
+		
+		
+		assertEquals(numero, cpf.getNumero());
 	}
 
 }
