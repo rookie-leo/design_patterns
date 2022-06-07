@@ -9,7 +9,7 @@ public interface AlunoRepository {
 
 	void matricular(Aluno aluno);
 	
-	Aluno buscarAlunoPorCPF(CPF cprf);
+	Aluno buscarAlunoPorCPF(CPF cpf);
 	
 	List<Aluno> listarAlunos();
 	
