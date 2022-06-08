@@ -11,6 +11,7 @@ public class Aluno {
 	private String nome;
 	private Email email; 
 	private List<Telefone> telefones = new ArrayList<Telefone>();
+	private String senha;
 	
 	
 	
