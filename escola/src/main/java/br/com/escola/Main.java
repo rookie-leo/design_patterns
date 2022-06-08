@@ -7,7 +7,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		FabricaDeAluno fabrica = new FabricaDeAluno();
-		Aluno aluno = fabrica.comNomeCPFEmail("12345678956", "", "")
+		Aluno aluno = fabrica.comNomeCPFEmail("123.456.789-98", "", "")
 			.comTelefone("", "")
 			.comTelefone("", "")
 			.criar();

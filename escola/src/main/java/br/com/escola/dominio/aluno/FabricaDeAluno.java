@@ -5,7 +5,7 @@ public class FabricaDeAluno {
 	private Aluno aluno;
 
 	public FabricaDeAluno comNomeCPFEmail(String nome, String cpf, String email) {
-		this.aluno = new Aluno(new CPF("12345678965"), "Raul Seixas", new Email("raul@email.com"));
+		this.aluno = new Aluno(new CPF(cpf), nome, new Email(email));
 		return this;
 	}
 	

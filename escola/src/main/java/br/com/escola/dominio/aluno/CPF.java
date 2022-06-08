@@ -18,5 +18,10 @@ public class CPF {
 	public void setNumero(String numero) {
 		this.numero = numero;
 	}
+
+	@Override
+	public String toString() {
+		return "CPF [numero=" + numero + "]";
+	}
 	
 }
