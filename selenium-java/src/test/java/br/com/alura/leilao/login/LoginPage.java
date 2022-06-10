@@ -5,6 +5,8 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import br.com.alura.leilao.leiloes.LeiloesPage;
+
 //Page Object
 public class LoginPage {
 	
@@ -12,7 +14,7 @@ public class LoginPage {
 	private WebDriver browser;
 	
 	public LoginPage() {
-		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver102.exe");// Seta onde está contido o drive de acesso do chrome	
+		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");// Seta onde está contido o drive de acesso do chrome	
 		this.browser = new ChromeDriver();// Inicializa o obj contendo o navegador		
 		this.browser.navigate().to(URL_LOGIN);// passa o caminho que o navegador deve acessar		
 	}
@@ -26,8 +28,9 @@ public class LoginPage {
 		this.browser.findElement(By.id("password")).sendKeys(password);
 	}
 
-	public void efetuaLogin() {
+	public LeiloesPage efetuaLogin() {
 		browser.findElement(By.id("login-form")).submit();// o metodo submit() funciona como um click no elemento especificado pelo id
+		return new LeiloesPage(browser);
 	}
 
 	public boolean isPaginaAtual() {
