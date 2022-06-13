@@ -24,7 +24,9 @@ Esquema do Cenario: Propondo um lance invalido
 		|  -1.0 | fulano      |
 	
 Cenario: Propondo uma sequencia de lances feita pelo mesmo usuario
-	Dado um lance de 10.0 reais do usuario "fulano"
-	E um lance de 15.0 reais do usuario "fulano"
+	Dado dois lances
+		| valor | nomeUsuario |
+		|  10.0 | fulano      |
+		|  15.0 | fulano      |
 	Quando propoe varios lances ao leilao
 	Entao o segundo lance nao eh aceito
