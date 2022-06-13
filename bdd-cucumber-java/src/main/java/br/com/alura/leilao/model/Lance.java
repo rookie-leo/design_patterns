@@ -38,7 +38,7 @@ public class Lance {
 	public Lance() {}
 	
 	public Lance(Usuario usuario, BigDecimal valor) {
-		if (valor.doubleValue() <= 0) {
+		if (valor.compareTo(BigDecimal.ZERO) <= 0) {
 			throw new IllegalArgumentException();
 		}
 		this.usuario = usuario;

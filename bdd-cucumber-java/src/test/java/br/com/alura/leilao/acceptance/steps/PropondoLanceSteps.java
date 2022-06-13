@@ -62,17 +62,15 @@ public class PropondoLanceSteps {
 	    assertEquals(this.lista.get(1).getValor(), leilao.getLances().get(1).getValor());
 	}
 
-	@Dado("um lance de {double} reais")
-	public void um_lance_de_reais(Double valor) {
-	    lance = new Lance(new BigDecimal(valor));
-//	    System.out.println(valor);
-	    System.out.println(lance.getValor());
+	@Dado("um lance invalido de {double} reais do usuario {string}")
+	public void um_lance_de_reais(Double valor, String nomeUsuario) {
+		System.out.println(nomeUsuario);//Apenas para ver o funcionamento
+		lance = new Lance(new BigDecimal(valor));
 	}
 
 	@Entao("o lance nao eh aceito")
-	public void o_lance_nao_eh_aceito() {
-	    System.out.println(lance.getValor());		
-	    assertThrows(IllegalArgumentException.class, () -> lance.getValor());
+	public void o_lance_nao_eh_aceito() {	
+	    assertEquals(0, leilao.getLances().size());
 	}
 
 	
