@@ -1,6 +1,7 @@
 package br.com.alura.leilao.acceptance.steps;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -61,4 +62,18 @@ public class PropondoLanceSteps {
 	    assertEquals(this.lista.get(1).getValor(), leilao.getLances().get(1).getValor());
 	}
 
+	@Dado("um lance de {double} reais")
+	public void um_lance_de_reais(Double valor) {
+	    lance = new Lance(new BigDecimal(valor));
+//	    System.out.println(valor);
+	    System.out.println(lance.getValor());
+	}
+
+	@Entao("o lance nao eh aceito")
+	public void o_lance_nao_eh_aceito() {
+	    System.out.println(lance.getValor());		
+	    assertThrows(IllegalArgumentException.class, () -> lance.getValor());
+	}
+
+	
 }
